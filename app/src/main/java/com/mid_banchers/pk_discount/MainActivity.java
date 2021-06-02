@@ -19,6 +19,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toast.makeText(this, "I am working", Toast.LENGTH_SHORT).show();
+
+
+
         arrow1 = findViewById(R.id.hot_arr);
         arrow2 = findViewById(R.id.tre_arr);
         arrow3 = findViewById(R.id.brn_arr);
