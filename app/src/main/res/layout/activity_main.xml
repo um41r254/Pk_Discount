@@ -18,46 +18,44 @@
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
-                android:layout_height="27dp"
-                android:layout_marginTop="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
                 android:text="Trending"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/textView2"
-                app:layout_constraintStart_toStartOf="@+id/textView2"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/hotdeals1" />
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
-                android:layout_height="27dp"
-                android:layout_marginTop="450dp"
-                android:layout_marginBottom="450dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
                 android:text="Shoes"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/textView4"
-                app:layout_constraintStart_toStartOf="@+id/textView4"
-                app:layout_constraintTop_toTopOf="@+id/men_c" />
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@id/kid_c" />
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
-                android:layout_height="27dp"
-                android:layout_marginTop="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
                 android:text="Brands"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/textView"
-                app:layout_constraintStart_toStartOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/trending1" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -69,7 +67,7 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineright"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
                 app:layout_constraintStart_toStartOf="@+id/guideline_left"
                 app:layout_constraintTop_toBottomOf="@+id/slider" />
 
@@ -77,33 +75,31 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="27dp"
-                android:layout_marginTop="220dp"
+                android:layout_marginTop="24dp"
                 android:text="Clothes"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/textView3"
-                app:layout_constraintStart_toStartOf="@+id/textView3"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/brand1" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/trending1"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="200dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="24dp"
                 app:cardCornerRadius="20dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView3"
                 app:layout_constraintEnd_toStartOf="@+id/middle"
                 app:layout_constraintStart_toStartOf="@+id/guideline_left"
                 app:layout_constraintTop_toBottomOf="@+id/textView">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
 
                     <ImageView
                         android:id="@+id/imgtri1"
@@ -126,7 +122,7 @@
                 android:layout_marginStart="8dp"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/trending1"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineright"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
                 app:layout_constraintStart_toStartOf="@+id/middle"
                 app:layout_constraintTop_toTopOf="@+id/trending1">
 
@@ -154,7 +150,7 @@
                 android:layout_height="0dp"
                 app:cardCornerRadius="25dp"
                 app:layout_constraintBottom_toTopOf="@+id/sliderend"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineright"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
                 app:layout_constraintStart_toStartOf="@+id/guideline_left"
                 app:layout_constraintTop_toTopOf="@+id/guidelinetop">
 
@@ -178,12 +174,10 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/hotdeals1"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="200dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="24dp"
                 app:cardCornerRadius="20dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView"
                 app:layout_constraintEnd_toStartOf="@+id/middle"
                 app:layout_constraintStart_toStartOf="@+id/guideline_left"
                 app:layout_constraintTop_toBottomOf="@+id/textView2">
@@ -220,7 +214,7 @@
                 android:layout_marginStart="8dp"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/hotdeals1"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineright"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
                 app:layout_constraintStart_toStartOf="@+id/middle"
                 app:layout_constraintTop_toTopOf="@+id/hotdeals1">
 
@@ -246,19 +240,17 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/brand1"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="180dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="24dp"
                 app:cardCornerRadius="20dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView4"
                 app:layout_constraintEnd_toStartOf="@+id/middle"
                 app:layout_constraintStart_toStartOf="@+id/guideline_left"
                 app:layout_constraintTop_toBottomOf="@+id/textView3">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
 
                     <ImageView
                         android:id="@+id/imgbrn1"
@@ -281,7 +273,7 @@
                 android:layout_marginStart="8dp"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/brand1"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineright"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
                 app:layout_constraintStart_toStartOf="@+id/middle"
                 app:layout_constraintTop_toTopOf="@+id/brand1">
 
@@ -306,18 +298,16 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/men_c"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginBottom="8dp"
                 app:cardCornerRadius="20dp"
-                app:layout_constraintBottom_toTopOf="@+id/women_c"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineright"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
                 app:layout_constraintStart_toStartOf="@+id/guideline_left"
                 app:layout_constraintTop_toBottomOf="@+id/textView4">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
 
                     <ImageView
                         android:id="@+id/imgm1"
@@ -336,18 +326,16 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/women_c"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
                 app:cardCornerRadius="20dp"
-                app:layout_constraintBottom_toTopOf="@+id/kid_c"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineright"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
                 app:layout_constraintStart_toStartOf="@+id/guideline_left"
                 app:layout_constraintTop_toBottomOf="@+id/men_c">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
 
                     <ImageView
                         android:id="@+id/imgw1"
@@ -365,19 +353,17 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/kid_c"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="24dp"
                 app:cardCornerRadius="20dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView5"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineright"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
                 app:layout_constraintStart_toStartOf="@+id/guideline_left"
                 app:layout_constraintTop_toBottomOf="@+id/women_c">
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
 
                     <ImageView
                         android:id="@+id/imgk1"
@@ -395,17 +381,16 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/men_sh"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginBottom="8dp"
                 app:cardCornerRadius="20dp"
-                app:layout_constraintBottom_toTopOf="@id/women_sh"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineright"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
                 app:layout_constraintStart_toStartOf="@+id/guideline_left"
-                app:layout_constraintTop_toBottomOf="@id/textView5" >
+                app:layout_constraintTop_toBottomOf="@id/textView5">
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
 
                     <ImageView
                         android:id="@+id/imgm2"
@@ -424,41 +409,40 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/women_sh"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
                 app:cardCornerRadius="20dp"
-                app:layout_constraintBottom_toTopOf="@id/kid_sh"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineright"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
                 app:layout_constraintStart_toStartOf="@+id/guideline_left"
                 app:layout_constraintTop_toBottomOf="@+id/men_sh">
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
 
-                <ImageView
-                    android:id="@+id/imgw2"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/w_shoe" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imgw2"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/w_shoe" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/kid_sh"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="24dp"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineright"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
                 app:layout_constraintStart_toStartOf="@+id/guideline_left"
                 app:layout_constraintTop_toBottomOf="@+id/women_sh">
 
@@ -494,7 +478,7 @@
                 app:layout_constraintGuide_begin="8dp" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guidelineright"
+                android:id="@+id/guideline_right"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginEnd="8dp"
@@ -517,37 +501,42 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent=".50" />
 
-            <View
-                android:id="@+id/tre_arr"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_marginTop="31dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/arrow"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineright"
-                app:layout_constraintTop_toBottomOf="@id/hotdeals2" />
-
-            <View
-                android:id="@+id/brn_arr"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_marginTop="31dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/arrow"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineright"
-                app:layout_constraintTop_toBottomOf="@id/trending2" />
-
             <Button
-                android:id="@+id/button"
+                android:id="@+id/button3"
                 style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="16dp"
+                app:icon="@drawable/ic_arrow"
+                app:iconPadding="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+            <Button
+                android:id="@+id/button1"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="16dp"
                 app:icon="@drawable/ic_arrow"
                 app:iconPadding="10dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView2"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline_right"
                 app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="16dp"
+                app:icon="@drawable/ic_arrow"
+                app:iconPadding="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+                app:layout_constraintTop_toTopOf="@+id/textView" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -12,8 +12,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    View arrow1, arrow2, arrow3;
+    Button arrow1,  arrow2, arrow3;
     CardView hot1, hot2, tre1, tre2, brn1, brn2, men_c, men_sh, women_c, women_sh, kid_c, kid_sh;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        arrow1 = findViewById(R.id.hot_arr);
-        arrow2 = findViewById(R.id.tre_arr);
-        arrow3 = findViewById(R.id.brn_arr);
+        arrow1 = findViewById(R.id.button1);
+        arrow2 = findViewById(R.id.button2);
+        arrow3 = findViewById(R.id.button3);
         arrow1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
