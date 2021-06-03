@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pk_Discount">
-        <activity android:name=".product_detail"></activity>
+        <activity android:name=".tester">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".product_detail" />
         <activity android:name=".hot_deals" />
         <activity android:name=".MainActivity">
             <intent-filter>
