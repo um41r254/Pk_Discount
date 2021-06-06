@@ -14,7 +14,7 @@ public class hot_deals extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hot_deals);
-        card1 = findViewById(R.id.tre1);
+        card1 = findViewById(R.id.hot1);
         card1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

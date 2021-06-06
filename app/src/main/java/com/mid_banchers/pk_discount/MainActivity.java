@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(this, "I am working", Toast.LENGTH_SHORT).show();
+
         String cityNames[] ={"Islamabad","Faisalabad","Lahore"};
-        MaterialAlertDialogBuilder citySelector = new MaterialAlertDialogBuilder(this);
+        MaterialAlertDialogBuilder citySelector = new MaterialAlertDialogBuilder(MainActivity.this);
         citySelector.setTitle("Select Your City");
         citySelector.setItems(cityNames, new DialogInterface.OnClickListener() {
             @Override
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        citySelector.show();
 
 
 
@@ -64,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Trending", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent( MainActivity.this,trending.class);
+                startActivity(intent);
 
             }
         });
@@ -71,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Brands", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent( MainActivity.this,all_brands.class);
+                startActivity(intent);
             }
         });
         hot1 = findViewById(R.id.hotdeals1);
@@ -124,18 +129,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Mens Clothes", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent( MainActivity.this,multiple_usage.class);
+                startActivity(intent);
             }
         });
         women_c.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Women Clothes", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent( MainActivity.this,multiple_usage.class);
+                startActivity(intent);
             }
         });
         kid_c.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Kids Cloths", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent( MainActivity.this,multiple_usage.class);
+                startActivity(intent);
             }
         });
         men_sh = findViewById(R.id.men_sh);
@@ -146,18 +157,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Mens Shoes", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent( MainActivity.this,multiple_usage.class);
+                startActivity(intent);
             }
         });
         women_sh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Women Shoes", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent( MainActivity.this,multiple_usage.class);
+                startActivity(intent);
             }
         });
         kid_sh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Kids Shoes", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent( MainActivity.this,multiple_usage.class);
+                startActivity(intent);
             }
         });
     }
