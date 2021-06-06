@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pk_Discount">
+        <activity android:name=".multiple_usage"></activity>
+        <activity android:name=".all_brands" />
+        <activity android:name=".trending" />
         <activity android:name=".tester">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

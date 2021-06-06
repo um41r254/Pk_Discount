@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintSet;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class MainActivity extends AppCompatActivity {
     Button arrow1,  arrow2, arrow3;
@@ -21,6 +24,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toast.makeText(this, "I am working", Toast.LENGTH_SHORT).show();
+        String cityNames[] ={"Islamabad","Faisalabad","Lahore"};
+        MaterialAlertDialogBuilder citySelector = new MaterialAlertDialogBuilder(this);
+        citySelector.setTitle("Select Your City");
+        citySelector.setItems(cityNames, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (which==0){
+                    Toast.makeText(MainActivity.this, "Islamabad "+ which, Toast.LENGTH_SHORT).show();
+
+                }
+                if (which==1){
+                    Toast.makeText(MainActivity.this, "Faisalabad "+ which, Toast.LENGTH_SHORT).show();
+
+                }
+                if (which==2){
+                    Toast.makeText(MainActivity.this, "Lahore "+ which, Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        });
+
+
 
 
 
