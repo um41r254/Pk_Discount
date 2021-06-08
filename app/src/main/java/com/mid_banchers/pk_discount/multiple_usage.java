@@ -6,10 +6,16 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class multiple_usage extends AppCompatActivity {
 CardView mul_u1;
+Spinner spinner;
 ImageView filter_ly;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +37,14 @@ ImageView filter_ly;
                 startActivity(intent);
             }
         });
+        spinner= findViewById(R.id.spinner);
+        List<String>data = new ArrayList<>();
+        data.add("");
+
+        ArrayAdapter<String> adapter = new Slider(this,R.layout.spinner_layout,data);
+
+        spinner.setAdapter(adapter);
+
 
     }
 }
