@@ -6,9 +6,12 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,14 +42,30 @@ ImageView filter_ly;
         });
         spinner= findViewById(R.id.spinner);
         List<String>data = new ArrayList<>();
-        data.add("");
-        data.add("");
+        data.add("aa");
 
 
         ArrayAdapter<String> adapter = new Slider(this,R.layout.spinner_layout,data);
 
         spinner.setAdapter(adapter);
 
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position==0){
+
+
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+
+        }
+        });
 
 
     }

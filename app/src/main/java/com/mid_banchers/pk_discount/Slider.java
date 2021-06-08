@@ -6,9 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.google.android.material.slider.RangeSlider;
 
 import java.util.List;
 import java.util.zip.Inflater;
@@ -42,8 +47,22 @@ public class Slider extends ArrayAdapter<String> {
     }
 
 
-    private View createSliderView (int position, View convertView , ViewGroup parent){
-        return LayoutInflater.from(context).inflate(resource,parent,false);
-    }
+    private View createSliderView (int position, View convertView , ViewGroup parent) {
 
-}
+        View view = LayoutInflater.from(context).inflate(resource, parent, false);
+
+        RangeSlider rangeSlider = view.findViewById(R.id.range_slider);
+        rangeSlider.addOnChangeListener(new RangeSlider.OnChangeListener() {
+            @Override
+            public void onValueChange(@NonNull RangeSlider slider, float value, boolean fromUser) {
+                Toast.makeText(context, "VAl"+ value, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
+
+            return view;
+        }
+    }

@@ -10,13 +10,16 @@ import android.os.Bundle;
 import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class MainActivity extends AppCompatActivity {
     Button arrow1,  arrow2, arrow3;
     CardView hot1, hot2, tre1, tre2, brn1, brn2, men_c, men_sh, women_c, women_sh, kid_c, kid_sh;
+    ImageView imghot1;
 
 
     @Override
@@ -177,5 +180,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        imghot1 = findViewById(R.id.imghot1);
+        Glide.with(MainActivity.this)
+                .load("https://www.differencebetween.com/wp-content/uploads/2011/06/Difference-Between-Cloths-and-Clothes-3.jpg")
+                .into(imghot1);
+
+
+
     }
 }
