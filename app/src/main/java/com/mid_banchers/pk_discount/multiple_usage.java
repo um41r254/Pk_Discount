@@ -40,10 +40,13 @@ ImageView filter_ly;
         spinner= findViewById(R.id.spinner);
         List<String>data = new ArrayList<>();
         data.add("");
+        data.add("");
+
 
         ArrayAdapter<String> adapter = new Slider(this,R.layout.spinner_layout,data);
 
         spinner.setAdapter(adapter);
+
 
 
     }
