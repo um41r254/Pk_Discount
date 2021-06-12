@@ -2,6 +2,7 @@ package com.mid_banchers.pk_discount;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -43,6 +44,7 @@ ImageView filter_ly;
         spinner= findViewById(R.id.spinner);
         List<String>data = new ArrayList<>();
         data.add("aa");
+        data.add("aa");
 
 
         ArrayAdapter<String> adapter = new Slider(this,R.layout.spinner_layout,data);
@@ -50,14 +52,12 @@ ImageView filter_ly;
         spinner.setAdapter(adapter);
 
 
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position==0){
 
-
-
-                }
+//
             }
 
             @Override
@@ -69,4 +69,5 @@ ImageView filter_ly;
 
 
     }
+
 }

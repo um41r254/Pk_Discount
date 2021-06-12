@@ -194,10 +194,11 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:dropDownWidth="match_parent"
+        android:longClickable="true"
         android:minWidth="50dp"
         android:spinnerMode="dialog"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
