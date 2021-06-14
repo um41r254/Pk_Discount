@@ -12,12 +12,11 @@ import android.view.ViewGroup;
 
 import com.mid_banchers.pk_discount.R;
 
-
-public class Tab1Fragment extends Fragment {
-
+public class Frag_shoe1 extends Fragment {
 
 
-    public Tab1Fragment() {
+
+    public Frag_shoe1() {
         // Required empty public constructor
     }
 
@@ -26,12 +25,10 @@ public class Tab1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab, container, false);
+        return inflater.inflate(R.layout.fragment_frag_shoe1, container, false);
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
     }
 }

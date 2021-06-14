@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "410600164120",
+    "firebase_url": "https://pk-discount-32fc0.firebaseio.com",
+    "project_id": "pk-discount-32fc0",
+    "storage_bucket": "pk-discount-32fc0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410600164120:android:a807bc492c9cf22a06ec6d",
+        "android_client_info": {
+          "package_name": "com.mid_banchers.pk_discount"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "410600164120-8pn02tdr5d37jtgoqi55dlhms1merkb4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzRICWlXE7V0gAGbct8xpI4uRLHOs9S40"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "410600164120-8pn02tdr5d37jtgoqi55dlhms1merkb4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

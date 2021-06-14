@@ -7,23 +7,21 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-import com.mid_banchers.pk_discount.Adapter.TabAdapter;
+import com.mid_banchers.pk_discount.Adapter.HotAdapter;
+import com.mid_banchers.pk_discount.Adapter.ShoeAdapter;
 
-public class Multiple_usage extends AppCompatActivity {
-
+public class Shoe_tab extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_multiple_usage);
+        setContentView(R.layout.activity_shoe_tab);
+        TabLayout tabLayout_shoe = findViewById(R.id.tablayout_shoe);
+        ViewPager2 viewPager_shoe = findViewById(R.id.pag_shoe);
 
-        TabLayout tabLayout = findViewById(R.id.tabLayout);
-        ViewPager2 viewPager = findViewById(R.id.pager);
-
-        TabAdapter adapter = new TabAdapter(this);
-        viewPager.setAdapter(adapter);
-
-        new TabLayoutMediator(tabLayout, viewPager, (TabLayout.Tab tab, int position) -> {
+        ShoeAdapter shoeAdapter = new ShoeAdapter(this);
+        viewPager_shoe.setAdapter(shoeAdapter);
+        new TabLayoutMediator(tabLayout_shoe,viewPager_shoe,(TabLayout.Tab tab, int position )-> {
             if (position == 0) {
                 tab.setText("MEN");
             }
@@ -33,9 +31,6 @@ public class Multiple_usage extends AppCompatActivity {
             if (position == 2) {
                 tab.setText("KIDS");
             }
-
         }).attach();
-
-
     }
 }

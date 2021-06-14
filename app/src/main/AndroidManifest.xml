@@ -9,13 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pk_Discount">
+        <activity android:name=".Clothes_tab"></activity>
+        <activity android:name=".Shoe_tab" />
         <activity android:name=".filters" />
         <activity android:name=".Multiple_usage" />
-        <activity android:name=".all_brands" />
-        <activity android:name=".trending" />
-        <activity android:name=".tester" />
-        <activity android:name=".product_detail" />
-        <activity android:name=".hot_deals" />
+        <activity android:name=".All_brands" />
+        <activity android:name=".Trending" />
+        <activity android:name=".Tester" />
+        <activity android:name=".Product_detail" />
+        <activity android:name=".Hot_deals" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

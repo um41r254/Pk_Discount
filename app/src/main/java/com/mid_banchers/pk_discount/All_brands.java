@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class all_brands extends AppCompatActivity {
+public class All_brands extends AppCompatActivity {
     CardView brand_1;
 
     @Override
@@ -18,7 +18,7 @@ public class all_brands extends AppCompatActivity {
         brand_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( all_brands.this, Multiple_usage.class);
+                Intent intent = new Intent( All_brands.this, Multiple_usage.class);
                 startActivity(intent);
             }
         });

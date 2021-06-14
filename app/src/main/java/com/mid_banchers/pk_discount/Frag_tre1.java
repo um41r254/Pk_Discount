@@ -13,25 +13,24 @@ import android.view.ViewGroup;
 import com.mid_banchers.pk_discount.R;
 
 
-public class Tab1Fragment extends Fragment {
+public class Frag_tre1 extends Fragment {
 
 
-
-    public Tab1Fragment() {
+    public Frag_tre1() {
         // Required empty public constructor
     }
+
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab, container, false);
+        return inflater.inflate(R.layout.fragment_frag_tre1, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
     }
 }

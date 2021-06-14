@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mid_banchers.pk_discount.R;
+
 
 public class Tab2Fragment extends Fragment {
 

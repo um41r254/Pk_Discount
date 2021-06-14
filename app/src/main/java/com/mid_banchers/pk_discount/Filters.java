@@ -9,7 +9,7 @@ import android.os.Bundle;
 
 import java.util.List;
 
-public class filters extends AppCompatActivity {
+public class Filters extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
