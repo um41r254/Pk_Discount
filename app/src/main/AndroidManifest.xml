@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mid_banchers.pk_discount">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pk_Discount">
-        <activity android:name=".filters"></activity>
-        <activity android:name=".multiple_usage" />
+        <activity android:name=".filters" />
+        <activity android:name=".Multiple_usage" />
         <activity android:name=".all_brands" />
         <activity android:name=".trending" />
         <activity android:name=".tester" />
@@ -26,5 +24,7 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

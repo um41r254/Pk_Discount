@@ -18,7 +18,7 @@ public class all_brands extends AppCompatActivity {
         brand_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( all_brands.this, multiple_usage.class);
+                Intent intent = new Intent( all_brands.this, Multiple_usage.class);
                 startActivity(intent);
             }
         });

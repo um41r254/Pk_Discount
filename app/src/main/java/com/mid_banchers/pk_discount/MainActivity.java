@@ -2,12 +2,10 @@ package com.mid_banchers.pk_discount;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintSet;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -132,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Mens Clothes", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent( MainActivity.this,multiple_usage.class);
+                Intent intent = new Intent( MainActivity.this, Multiple_usage.class);
                 startActivity(intent);
             }
         });
@@ -140,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Women Clothes", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent( MainActivity.this,multiple_usage.class);
+                Intent intent = new Intent( MainActivity.this, Multiple_usage.class);
                 startActivity(intent);
             }
         });
@@ -148,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Kids Cloths", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent( MainActivity.this,multiple_usage.class);
+                Intent intent = new Intent( MainActivity.this, Multiple_usage.class);
                 startActivity(intent);
             }
         });
@@ -160,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Mens Shoes", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent( MainActivity.this,multiple_usage.class);
+                Intent intent = new Intent( MainActivity.this, Multiple_usage.class);
                 startActivity(intent);
             }
         });
@@ -168,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Women Shoes", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent( MainActivity.this,multiple_usage.class);
+                Intent intent = new Intent( MainActivity.this, Multiple_usage.class);
                 startActivity(intent);
             }
         });
@@ -176,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Kids Shoes", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent( MainActivity.this,multiple_usage.class);
+                Intent intent = new Intent( MainActivity.this, Multiple_usage.class);
                 startActivity(intent);
             }
         });
