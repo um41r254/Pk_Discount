@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "hogya", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, Hot_deals.class);
+                Intent intent = new Intent(MainActivity.this, HotDeals.class);
                 startActivity(intent);
             }
         });
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Brands", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, All_brands.class);
+                Intent intent = new Intent(MainActivity.this, AllBrands.class);
                 startActivity(intent);
             }
         });
@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Mens Clothes", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, Clothes_tab.class);
+                Intent intent = new Intent(MainActivity.this, ClothesTab.class);
                 startActivity(intent);
             }
         });
@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Women Clothes", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, Clothes_tab.class);
+                Intent intent = new Intent(MainActivity.this, ClothesTab.class);
                 startActivity(intent);
             }
         });
@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Kids Cloths", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, Clothes_tab.class);
+                Intent intent = new Intent(MainActivity.this, ClothesTab.class);
                 startActivity(intent);
             }
         });
@@ -206,17 +206,17 @@ public class MainActivity extends AppCompatActivity {
 
         men_sh.setOnClickListener(v -> {
             Toast.makeText(MainActivity.this, "Mens Shoes", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(MainActivity.this, Shoe_tab.class);
+            Intent intent = new Intent(MainActivity.this, ShoeTab.class);
             startActivity(intent);
         });
         women_sh.setOnClickListener(v -> {
             Toast.makeText(MainActivity.this, "Women Shoes", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(MainActivity.this, Shoe_tab.class);
+            Intent intent = new Intent(MainActivity.this, ShoeTab.class);
             startActivity(intent);
         });
         kid_sh.setOnClickListener(v -> {
             Toast.makeText(MainActivity.this, "Kids Shoes", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(MainActivity.this, Shoe_tab.class);
+            Intent intent = new Intent(MainActivity.this, ShoeTab.class);
             startActivity(intent);
         });
         imghot1 = findViewById(R.id.imghot1);

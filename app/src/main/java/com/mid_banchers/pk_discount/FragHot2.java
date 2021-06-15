@@ -13,11 +13,11 @@ import android.view.ViewGroup;
 import com.mid_banchers.pk_discount.R;
 
 
-public class Frag_cloths2 extends Fragment {
+public class FragHot2 extends Fragment {
 
 
 
-    public Frag_cloths2() {
+    public FragHot2() {
         // Required empty public constructor
     }
 
@@ -27,8 +27,9 @@ public class Frag_cloths2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_frag_cloths2, container, false);
+        return inflater.inflate(R.layout.fragment_frag_hot2, container, false);
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

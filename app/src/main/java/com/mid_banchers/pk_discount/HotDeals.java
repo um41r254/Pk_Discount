@@ -13,7 +13,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.mid_banchers.pk_discount.Adapter.HotAdapter;
 
-public class Hot_deals extends AppCompatActivity {
+public class HotDeals extends AppCompatActivity {
     CardView card1;
     TabLayout tabs;
     TabItem men,women,kids;

@@ -14,10 +14,10 @@ import android.view.ViewGroup;
 import com.mid_banchers.pk_discount.R;
 
 
-public class Frag_tre2 extends Fragment {
+public class FragTre2 extends Fragment {
 
 
-    public Frag_tre2() {
+    public FragTre2() {
         // Required empty public constructor
     }
 

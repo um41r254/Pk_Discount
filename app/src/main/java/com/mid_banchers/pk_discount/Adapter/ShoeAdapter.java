@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.mid_banchers.pk_discount.Frag_shoe1;
-import com.mid_banchers.pk_discount.Frag_shoe2;
-import com.mid_banchers.pk_discount.Frag_shoe3;
+import com.mid_banchers.pk_discount.FragShoe1;
+import com.mid_banchers.pk_discount.FragShoe2;
+import com.mid_banchers.pk_discount.FragShoe3;
 
 public class ShoeAdapter  extends FragmentStateAdapter {
     public ShoeAdapter(@NonNull FragmentActivity fragmentActivity) {
@@ -18,11 +18,11 @@ public class ShoeAdapter  extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         if (position == 0) {
-            return new Frag_shoe1();
+            return new FragShoe1();
         } else if (position == 1) {
-            return new Frag_shoe2();
+            return new FragShoe2();
         } else {
-            Frag_shoe3 fr_sh3 = new Frag_shoe3();
+            FragShoe3 fr_sh3 = new FragShoe3();
             return fr_sh3;
         }
     }

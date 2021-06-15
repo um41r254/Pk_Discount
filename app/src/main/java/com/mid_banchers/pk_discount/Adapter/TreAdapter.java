@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.mid_banchers.pk_discount.Frag_tre1;
-import com.mid_banchers.pk_discount.Frag_tre2;
-import com.mid_banchers.pk_discount.Frag_tre3;
+import com.mid_banchers.pk_discount.FragTre1;
+import com.mid_banchers.pk_discount.FragTre2;
+import com.mid_banchers.pk_discount.FragTre3;
 
 
 public class TreAdapter  extends FragmentStateAdapter {
@@ -19,11 +19,11 @@ public class TreAdapter  extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         if (position == 0) {
-            return new Frag_tre1();
+            return new FragTre1();
         } else if (position == 1) {
-            return new Frag_tre2();
+            return new FragTre2();
         } else {
-            Frag_tre3 fr_tri3 = new Frag_tre3();
+            FragTre3 fr_tri3 = new FragTre3();
             return fr_tri3;
         }
     }

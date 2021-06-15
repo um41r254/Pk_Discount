@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.mid_banchers.pk_discount.Frag_cloths1;
-import com.mid_banchers.pk_discount.Frag_cloths2;
-import com.mid_banchers.pk_discount.Frag_cloths3;
+import com.mid_banchers.pk_discount.FragCloths1;
+import com.mid_banchers.pk_discount.FragCloths2;
+import com.mid_banchers.pk_discount.FragCloths3;
 
 public class ClothesAdpater extends FragmentStateAdapter {
     public ClothesAdpater(@NonNull FragmentActivity fragmentActivity) {
@@ -18,11 +18,11 @@ public class ClothesAdpater extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         if (position == 0) {
-            return new Frag_cloths1();
+            return new FragCloths1();
         } else if (position == 1) {
-            return new Frag_cloths2();
+            return new FragCloths2();
         } else {
-            Frag_cloths3 fr_ch3 = new Frag_cloths3();
+            FragCloths3 fr_ch3 = new FragCloths3();
             return fr_ch3;
         }
     }

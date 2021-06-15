@@ -13,10 +13,10 @@ import android.view.ViewGroup;
 import com.mid_banchers.pk_discount.R;
 
 
-public class Frag_shoe3 extends Fragment {
+public class FragShoe3 extends Fragment {
 
 
-    public Frag_shoe3() {
+    public FragShoe3() {
         // Required empty public constructor
     }
 

@@ -12,11 +12,11 @@ import android.view.ViewGroup;
 
 import com.mid_banchers.pk_discount.R;
 
-public class Frag_shoe1 extends Fragment {
+public class FragShoe1 extends Fragment {
 
 
 
-    public Frag_shoe1() {
+    public FragShoe1() {
         // Required empty public constructor
     }
 
