@@ -24,7 +24,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 public class FragHot1 extends Fragment {
 
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseFirestore dbX = FirebaseFirestore.getInstance();
 
     public FragHot1() {
 
@@ -36,17 +36,21 @@ public class FragHot1 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootview = inflater.inflate(R.layout.fragment_frag_hot1, container, false);
+        return rootview;
+    }
 
-        CardView cardView = rootview.findViewById(R.id.hot1);
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1 = new Intent(getActivity(), ProductDetail.class);
-                startActivity(intent1);
-            }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        CardView cardView = view.findViewById(R.id.hot1);
+        cardView.setOnClickListener(v -> {
+            Intent intent1 = new Intent(getActivity(), ProductDetail.class);
+            startActivity(intent1);
         });
-        ImageView imageView = rootview.findViewById(R.id.imageView);
-        db.collection("Products")
+        ImageView imageView = view.findViewById(R.id.imageView);
+        dbX.collection("Products")
                 .whereEqualTo("trending", true)
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -72,13 +76,5 @@ public class FragHot1 extends Fragment {
                 Toast.makeText(getContext(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-        return rootview;
-    }
-
-
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
     }
 }

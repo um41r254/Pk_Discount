@@ -14,11 +14,11 @@ public class AllBrands extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_brands);
-        brand_1=findViewById(R.id.brand_1);
+        brand_1 = findViewById(R.id.brand_1);
         brand_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( AllBrands.this, MultipleUsage.class);
+                Intent intent = new Intent(AllBrands.this, MultipleUsage.class);
                 startActivity(intent);
             }
         });
