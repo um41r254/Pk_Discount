@@ -24,8 +24,6 @@ public class AdapterBrands extends RecyclerView.Adapter<AdapterBrands.ViewHolder
     public AdapterBrands(Context context, List<DataModelBrand> data) {
         this.context = context;
         this.data = data;
-
-
     }
 
     @NonNull
