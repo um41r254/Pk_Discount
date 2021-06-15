@@ -16,27 +16,20 @@ import com.mid_banchers.pk_discount.Adapter.HotAdapter;
 public class HotDeals extends AppCompatActivity {
     CardView card1;
     TabLayout tabs;
-    TabItem men,women,kids;
+    TabItem men, women, kids;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hot_deals);
-//        card1 = findViewById(R.id.hot1);
-//        card1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(hot_deals.this,product_detail.class);
-//                startActivity(intent);
-//            }
-//        });
-  TabLayout tabLayout_hot = findViewById(R.id.tabLayout_hot);
+
+        TabLayout tabLayout_hot = findViewById(R.id.tabLayout_hot);
         ViewPager2 viewPager_hot = findViewById(R.id.pag_hot);
 
         HotAdapter hotAdapter = new HotAdapter(this);
         viewPager_hot.setAdapter(hotAdapter);
-        new TabLayoutMediator(tabLayout_hot,viewPager_hot,(TabLayout.Tab tab, int position )-> {
+        new TabLayoutMediator(tabLayout_hot, viewPager_hot, (TabLayout.Tab tab, int position) -> {
             if (position == 0) {
                 tab.setText("MEN");
             }

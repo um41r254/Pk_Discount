@@ -11,6 +11,8 @@ import com.mid_banchers.pk_discount.Adapter.TabAdapter;
 
 public class MultipleUsage extends AppCompatActivity {
 
+    public static int brandID = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

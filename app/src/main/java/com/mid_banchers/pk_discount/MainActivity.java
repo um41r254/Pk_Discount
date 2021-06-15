@@ -3,6 +3,9 @@ package com.mid_banchers.pk_discount;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -21,15 +24,25 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     Button arrow1, arrow2, arrow3;
-    CardView hot1, hot2, tre1, tre2, brn1, brn2, men_c, men_sh, women_c, women_sh, kid_c, kid_sh;
+    CardView tre1, tre2, brn1, brn2, men_c, men_sh, women_c, women_sh, kid_c, kid_sh;
     ImageView imghot1;
 
     ImageView ivTrend1, ivTrend2;
+    RecyclerView rvHotDeals;
+    RecyclerView rvTrending;
+    RecyclerView rvBrands;
+
+
+    // Saving single product data
+    public static DataModel productData = null;
 
 
     @Override
@@ -37,168 +50,51 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        rvHotDeals = findViewById(R.id.rvHome);
+        rvTrending = findViewById(R.id.rvTrending);
+        rvBrands = findViewById(R.id.rvBrands);
 
-        ivTrend1 = findViewById(R.id.imgtri1);
-        ivTrend2 = findViewById(R.id.imgtri2);
-
-
-        db.collection("Products")
-                .whereEqualTo("trending", true)
-                .get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-
-                        for (DocumentSnapshot ds : queryDocumentSnapshots.getDocuments()) {
-
-                            String url = ds.getString("image");
-
-                            Glide.with(MainActivity.this)
-                                    .load(url)
-                                    .into(ivTrend1);
-                            Log.d("TAG", "onSuccess: ");
-
-                        }
-
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.d("TAG", "onFailure: " + e.getLocalizedMessage());
-                Toast.makeText(MainActivity.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-
-
-
-
-
-
-
-
-        String cityNames[] = {"Islamabad", "Faisalabad", "Lahore"};
-        MaterialAlertDialogBuilder citySelector = new MaterialAlertDialogBuilder(MainActivity.this);
-        citySelector.setTitle("Select Your City");
-        citySelector.setItems(cityNames, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                if (which == 0) {
-                    Toast.makeText(MainActivity.this, "Islamabad " + which, Toast.LENGTH_SHORT).show();
-
-                }
-                if (which == 1) {
-                    Toast.makeText(MainActivity.this, "Faisalabad " + which, Toast.LENGTH_SHORT).show();
-
-                }
-                if (which == 2) {
-                    Toast.makeText(MainActivity.this, "Lahore " + which, Toast.LENGTH_SHORT).show();
-
-                }
-            }
-        });
-        citySelector.show();
+        getHotDeals();
+        getTrending();
+        getBrands();
 
 
         arrow1 = findViewById(R.id.button1);
         arrow2 = findViewById(R.id.button2);
         arrow3 = findViewById(R.id.button3);
-        arrow1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "hogya", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, HotDeals.class);
-                startActivity(intent);
-            }
+        arrow1.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, HotDeals.class);
+            startActivity(intent);
         });
-        arrow2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Trending", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, Trending.class);
-                startActivity(intent);
-
-            }
-        });
-        arrow3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Brands", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, AllBrands.class);
-                startActivity(intent);
-            }
-        });
-        hot1 = findViewById(R.id.hotdeals1);
-        hot2 = findViewById(R.id.hotdeals2);
-        hot1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Hot deal 1", Toast.LENGTH_SHORT).show();
-            }
-        });
-        hot2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Hot Deal 2", Toast.LENGTH_SHORT).show();
-            }
-        });
-        tre1 = findViewById(R.id.trending1);
-        tre2 = findViewById(R.id.trending2);
-        tre1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Trendind 1", Toast.LENGTH_SHORT).show();
-            }
-        });
-        tre2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Trending 2", Toast.LENGTH_SHORT).show();
-            }
-        });
-        brn1 = findViewById(R.id.brand1);
-        brn2 = findViewById(R.id.brand2);
-        brn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Brand 1", Toast.LENGTH_SHORT).show();
-            }
+        arrow2.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Trending", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, Trending.class);
+            startActivity(intent);
 
         });
-        brn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Brand 2", Toast.LENGTH_SHORT).show();
-
-            }
+        arrow3.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Brands", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, AllBrands.class);
+            startActivity(intent);
         });
+
         men_c = findViewById(R.id.men_c);
         women_c = findViewById(R.id.women_c);
         kid_c = findViewById(R.id.kid_c);
-        men_c.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Mens Clothes", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, ClothesTab.class);
-                startActivity(intent);
-            }
+        men_c.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Mens Clothes", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, ClothesTab.class);
+            startActivity(intent);
         });
-        women_c.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Women Clothes", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, ClothesTab.class);
-                startActivity(intent);
-            }
+        women_c.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Women Clothes", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, ClothesTab.class);
+            startActivity(intent);
         });
-        kid_c.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Kids Cloths", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, ClothesTab.class);
-                startActivity(intent);
-            }
+        kid_c.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Kids Cloths", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, ClothesTab.class);
+            startActivity(intent);
         });
         men_sh = findViewById(R.id.men_sh);
         women_sh = findViewById(R.id.women_sh);
@@ -219,11 +115,101 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, ShoeTab.class);
             startActivity(intent);
         });
-        imghot1 = findViewById(R.id.imghot1);
-        Glide.with(MainActivity.this)
-                .load("https://www.differencebetween.com/wp-content/uploads/2011/06/Difference-Between-Cloths-and-Clothes-3.jpg")
-                .into(imghot1);
 
+    }
+
+    private void getBrands() {
+
+        List<DataModelBrand> data = new ArrayList<>();
+        // Dummy data
+        data.add(new DataModelBrand());
+        data.add(new DataModelBrand());
+        data.add(new DataModelBrand());
+
+        rvBrands.setAdapter(new AdapterBrands(this, data));
+        rvBrands.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        db.collection("Brands")
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+
+                    data.clear();
+
+                    for (DocumentSnapshot ds : queryDocumentSnapshots.getDocuments()) {
+                        data.add(ds.toObject(DataModelBrand.class));
+                    }
+
+                    rvBrands.setAdapter(new AdapterBrands(this, data));
+                    rvBrands.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+                }).addOnFailureListener(e -> {
+            Log.d("TAG", "onFailure: " + e.getLocalizedMessage());
+            Toast.makeText(MainActivity.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+        });
+    }
+
+    private void getTrending() {
+
+        List<DataModel> data = new ArrayList<>();
+        // Dummy data
+        data.add(new DataModel());
+        data.add(new DataModel());
+        data.add(new DataModel());
+
+        rvTrending.setAdapter(new AdapterMain(this, data));
+        rvTrending.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        db.collection("Products")
+                .whereEqualTo("trending", true)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+
+                    data.clear();
+
+                    for (DocumentSnapshot ds : queryDocumentSnapshots.getDocuments()) {
+                        data.add(ds.toObject(DataModel.class));
+                    }
+
+                    rvTrending.setAdapter(new AdapterMain(this, data));
+                    rvTrending.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+                }).addOnFailureListener(e -> {
+            Log.d("TAG", "onFailure: " + e.getLocalizedMessage());
+            Toast.makeText(MainActivity.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+        });
+
+    }
+
+
+    private void getHotDeals() {
+
+        List<DataModel> data = new ArrayList<>();
+        // Dummy data
+        data.add(new DataModel());
+        data.add(new DataModel());
+        data.add(new DataModel());
+
+        rvHotDeals.setAdapter(new AdapterMain(this, data));
+        rvHotDeals.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        db.collection("Products")
+                .whereEqualTo("hot_deals", true)
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+
+                    data.clear();
+
+                    for (DocumentSnapshot ds : queryDocumentSnapshots.getDocuments()) {
+                        data.add(ds.toObject(DataModel.class));
+                    }
+
+                    rvHotDeals.setAdapter(new AdapterMain(this, data));
+                    rvHotDeals.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+                }).addOnFailureListener(e -> {
+            Log.d("TAG", "onFailure: " + e.getLocalizedMessage());
+            Toast.makeText(MainActivity.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+        });
 
     }
 }

@@ -9,7 +9,7 @@ import com.mid_banchers.pk_discount.FragHot1;
 import com.mid_banchers.pk_discount.FragHot2;
 import com.mid_banchers.pk_discount.FragHot3;
 
-public class HotAdapter  extends FragmentStateAdapter {
+public class HotAdapter extends FragmentStateAdapter {
 
     public HotAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);

@@ -7,6 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,16 +20,23 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.chip.ChipGroup;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FragHot1 extends Fragment {
 
-    FirebaseFirestore dbX = FirebaseFirestore.getInstance();
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    List<DataModel> data = new ArrayList<>();
+    RecyclerView rvHotDeals;
+    ChipGroup chipGroupType;
 
     public FragHot1() {
-
         // Required empty public constructor
     }
 
@@ -35,8 +44,7 @@ public class FragHot1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootview = inflater.inflate(R.layout.fragment_frag_hot1, container, false);
-        return rootview;
+        return inflater.inflate(R.layout.fragment_frag_hot1, container, false);
     }
 
 
@@ -44,37 +52,51 @@ public class FragHot1 extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        CardView cardView = view.findViewById(R.id.hot1);
-        cardView.setOnClickListener(v -> {
-            Intent intent1 = new Intent(getActivity(), ProductDetail.class);
-            startActivity(intent1);
-        });
-        ImageView imageView = view.findViewById(R.id.imageView);
-        dbX.collection("Products")
-                .whereEqualTo("trending", true)
-                .get()
-                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                    @Override
-                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+        rvHotDeals = view.findViewById(R.id.rvSingleBrand);
+        chipGroupType = view.findViewById(R.id.groupX);
 
-                        for (DocumentSnapshot ds : queryDocumentSnapshots.getDocuments()) {
 
-                            String url = ds.getString("image");
+        getData("clothes");
 
-                            Glide.with(getActivity())
-                                    .load(url)
-                                    .into(imageView);
-                            Log.d("TAG", "onSuccess: ");
-
-                        }
-
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.d("TAG", "onFailure: " + e.getLocalizedMessage());
-                Toast.makeText(getContext(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+        // Chip Group Type
+        chipGroupType.setOnCheckedChangeListener((group, checkedId) -> {
+            data.clear();
+            if (checkedId == R.id.chip5) {
+                getData("clothes");
             }
+            if (checkedId == R.id.chip6) {
+                getData("shoes");
+            }
+        });
+
+
+    }
+
+    private void getData(String type) {
+        Query query;
+
+
+        query = db.collection("Products")
+                .whereEqualTo("category", "men")
+                .whereEqualTo("hot_deals", true)
+                .whereEqualTo("type", type)
+                .whereEqualTo("size", "S");
+
+        Log.d("TAG", "getData(FragHot1): " + type);
+
+        query.get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+
+                    Log.d("TAG", "getData: " + queryDocumentSnapshots.size());
+                    for (DocumentSnapshot ds : queryDocumentSnapshots.getDocuments()) {
+                        data.add(ds.toObject(DataModel.class));
+                    }
+                    AdapterRecycler adapter = new AdapterRecycler(getContext(), data);
+                    rvHotDeals.setAdapter(adapter);
+                    rvHotDeals.setLayoutManager(new GridLayoutManager(getContext(), 2));
+
+                }).addOnFailureListener(e -> {
+            Log.d("TAG", "getData: " + e.getMessage());
         });
     }
 }
