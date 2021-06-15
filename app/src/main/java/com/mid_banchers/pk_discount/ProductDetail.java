@@ -41,7 +41,6 @@ public class ProductDetail extends AppCompatActivity {
                 .load(MainActivity.productData.getImage())
                 .into(ivMain);
 
-
         rvLinks.setAdapter(new AdapterLinks(this, MainActivity.productData.getLink(), MainActivity.productData.getPrice()));
         rvLinks.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 

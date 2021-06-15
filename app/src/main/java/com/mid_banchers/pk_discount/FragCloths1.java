@@ -58,7 +58,6 @@ public class FragCloths1 extends Fragment {
         getData("formal shirt", "S");
 
 
-
         // Chip Group Type
         chipGroupType.setOnCheckedChangeListener((group, checkedId) -> {
             data.clear();
@@ -181,7 +180,6 @@ public class FragCloths1 extends Fragment {
                     .whereEqualTo("style", style)
                     .whereEqualTo("size", size);
         }
-
 
         query.get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {

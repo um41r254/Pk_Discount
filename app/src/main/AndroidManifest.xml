@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pk_Discount">
-        <activity android:name=".SplashActivity">
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,12 +22,13 @@
         </activity>
         <activity android:name=".ClothesTab" />
         <activity android:name=".ShoeTab" />
-        <activity android:name=".filters" />
         <activity android:name=".MultipleUsage" />
         <activity android:name=".AllBrands" />
         <activity android:name=".Trending" />
         <activity android:name=".Tester" />
-        <activity android:name=".ProductDetail" />
+        <activity
+            android:name=".ProductDetail"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name=".HotDeals" />
         <activity android:name=".MainActivity">
 

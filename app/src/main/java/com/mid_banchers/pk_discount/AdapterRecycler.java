@@ -1,6 +1,7 @@
 package com.mid_banchers.pk_discount;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,6 +78,16 @@ public class AdapterRecycler extends RecyclerView.Adapter<AdapterRecycler.ViewHo
             tvArticleNumber = itemView.findViewById(R.id.textView7);
             tvPrice = itemView.findViewById(R.id.textView8);
             cv = itemView.findViewById(R.id.mul_u1);
+
+            cv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    MainActivity.productData = data.get(getAdapterPosition());
+                    context.startActivity(new Intent(context, ProductDetail.class));
+
+                }
+            });
 
         }
     }

@@ -21,7 +21,7 @@ public class ClothesTab extends AppCompatActivity {
 
         ClothesAdpater clothesAdpater = new ClothesAdpater(this);
         viewPager_clothes.setAdapter(clothesAdpater);
-        new TabLayoutMediator(tabLayout_clothes,viewPager_clothes,(TabLayout.Tab tab, int position )-> {
+        new TabLayoutMediator(tabLayout_clothes, viewPager_clothes, (TabLayout.Tab tab, int position) -> {
             if (position == 0) {
                 tab.setText("MEN");
             }
